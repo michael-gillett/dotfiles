@@ -1,0 +1,14 @@
+"*":
+  core:
+    automaticallyUpdate: false
+    closeDeletedFileTabs: true
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "rocket-dark-syntax"
+    ]
+    titleBar: "custom"
+    uriHandlerRegistration: "always"
+    warnOnLargeFileLimit: 5
+  "exception-reporting":
+    userId: "d541b464-200f-43cf-8d80-6ee76dcb576e"

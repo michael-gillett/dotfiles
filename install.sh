@@ -6,17 +6,20 @@ link ~/.dotfiles/bashrc ~/.bashrc
 link ~/.dotfiles/vimrc ~/.vimrc
 link ~/.dotfiles/zshrc ~/.zshrc
 link ~/.dotfiles/atom/config.cson ~/.atom/config.cson
+link ~/.dotfiles/gitconfig ~/.gitconfig
 
 if [[ $(uname -s) == Darwin ]]
 then # macOS
   title "macOS specific install"
   $(~/.dotfiles/macos_install.sh)
-else
-  ./ubuntu_install
+elif [[ $(uname -s) == Linux ]]
+then
+  title "Linux specific install"
+  $(~/.dotfiles/ubuntu_install.sh)
 fi
 
 # Change shell to ZSH
-chsh -s /bin/zsh
+chsh -s $(which zsh)
 
 # ========== ATOM ==========
 

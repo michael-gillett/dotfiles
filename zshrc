@@ -1,3 +1,8 @@
+# Case insensitive tab completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+# Auto load suggestions when correcting case
+setopt MENU_COMPLETE
+
 # Reload completions
 autoload -Uz compinit && compinit
 

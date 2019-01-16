@@ -1,4 +1,4 @@
-# This file contains macOS specific setup
+# Include printing helper functions
 source ~/.dotfiles/helpers.sh
 
 ##############################################################################

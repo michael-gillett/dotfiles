@@ -1,16 +1,17 @@
 # This file contains macOS specific setup
+source ~/.dotfiles/helpers.sh
 
-# Helper print functions
-bold=$(tput bold)
-normal=$(tput sgr0)
+##############################################################################
+title "CLI Tools"
+##############################################################################
+if [[ $(which brew) == "" ]]; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
-title () {
-  echo ${bold}$1${normal}
-}
-
-subtitle () {
-  echo "  " $1;
-}
+brew install zsh
+brew install getantibody/tap/antibody
+brew install diff-so-fancy
+brew install homebrew/cask-fonts/font-source-code-pro
 
 ##############################################################################
 title "Security"

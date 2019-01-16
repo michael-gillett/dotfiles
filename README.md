@@ -6,3 +6,5 @@
 ### zsh
 - antibody for managing plugins
 - spaceship prompt
+### Python
+- Miniconda

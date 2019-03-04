@@ -8,6 +8,7 @@ link ~/.dotfiles/zshrc ~/.zshrc
 link ~/.dotfiles/atom/config.cson ~/.atom/config.cson
 link ~/.dotfiles/gitconfig ~/.gitconfig
 link ~/.dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
+link ~/.dotfiles/atom/config.cson ~/.atom/config.cson
 
 if [[ $(uname -s) == Darwin ]]
 then # macOS
@@ -35,8 +36,6 @@ chsh -s $(which zsh)
 
 # Write atom config to dotfiles
 # cat ~/.atom/config.cson > ~/.dotfiles/atom/config.cson
-
-# Link atom/config.cson -> ~/.atom/config.cson
 
 # Miniconda
 title "Installing miniconda"

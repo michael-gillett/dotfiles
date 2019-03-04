@@ -1,7 +1,10 @@
 "*":
   core:
     automaticallyUpdate: false
-    closeDeletedFileTabs: true
+    ignoredNames: [
+      ".git"
+      "node_modules"
+    ]
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
@@ -10,5 +13,15 @@
     titleBar: "custom"
     uriHandlerRegistration: "always"
     warnOnLargeFileLimit: 5
+  editor:
+    showIndentGuide: true
   "exception-reporting":
     userId: "d541b464-200f-43cf-8d80-6ee76dcb576e"
+  "linter-ui-default": {}
+  "prettier-atom":
+    formatOnSaveOptions:
+      showInStatusBar: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false

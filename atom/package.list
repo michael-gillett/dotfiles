@@ -1,1 +1,13 @@
+atom-fuzzy-grep@0.17.2
+busy-signal@2.0.0
+intentions@1.1.5
+language-haml@0.32.1
+language-lua@0.9.11
+linter@2.0.0
+linter-rubocop@2.2.3
+linter-ui-default@1.7.1
+minimap@4.29.9
+pigments@0.40.2
+prettier-atom@0.56.4
 rocket-dark-syntax@1.0.0
+

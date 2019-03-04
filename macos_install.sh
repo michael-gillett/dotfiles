@@ -12,6 +12,9 @@ brew install zsh
 brew install getantibody/tap/antibody
 brew install diff-so-fancy
 brew install homebrew/cask-fonts/font-source-code-pro
+brew install rbenv
+brew cask install hammerspoon
+brew cask install karabiner-elements
 
 ##############################################################################
 title "Security"

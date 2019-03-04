@@ -7,6 +7,7 @@ link ~/.dotfiles/vimrc ~/.vimrc
 link ~/.dotfiles/zshrc ~/.zshrc
 link ~/.dotfiles/atom/config.cson ~/.atom/config.cson
 link ~/.dotfiles/gitconfig ~/.gitconfig
+link ~/.dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
 
 if [[ $(uname -s) == Darwin ]]
 then # macOS

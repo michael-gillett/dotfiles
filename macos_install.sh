@@ -65,6 +65,9 @@ subtitle "Set a fast keyboard repeat rate"
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 25
 
+subtitle "Set trackpad tracking speed to maximum"
+defaults write -g com.apple.trackpad.scaling 3.0
+
 ###############################################################################
 title "Configuring the Screen"
 ###############################################################################
@@ -134,6 +137,9 @@ defaults write com.apple.dock mru-spaces -bool false
 
 subtitle "Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true
+
+subtitle "Hide recently used apps section in the Dock (Mojave)"
+defaults write com.apple.dock show-recents -bool false
 
 ###############################################################################
 title "Configuring Safari & WebKit"

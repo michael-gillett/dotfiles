@@ -1,3 +1,4 @@
+#!/bin/bash
 source ~/.dotfiles/helpers.sh
 
 title "Link config files"
@@ -22,28 +23,28 @@ then
 fi
 
 # Change shell to ZSH
-if [[ $SHELL != $(which zsh) ]]
+if [[ $SHELL -ef $(which zsh) ]]
 then
   chsh -s $(which zsh)
 fi
 
+title "Install Antibody packages"
+$(./antibody/install.sh)
+
+title "Install atom packages"
+# apm install doesn't natively support skipping already installed packages
+for package_and_version in `cat ~/.dotfiles/atom/package.list`;
+do
+  # Strip the version number off the end of the package
+  package=${package_and_version%@*}
+  if [[ ! -d "$HOME/.atom/packages/$package" ]]
+  then
+    apm install $package
+  fi
+done
+
+title "Done :)"
+
 # ========== ATOM ==========
-
-# Mac setup
-# Settings Atom -> Install Shell Commands
-
-# Install from dotfile config
-# apm install --packages-file ~/.dotfiles/atom/package.list
-
 # Write packages to dotfile config
 # apm list --installed --bare > ~/.dotfiles/atom/package.list
-
-# Write atom config to dotfiles
-# cat ~/.atom/config.cson > ~/.dotfiles/atom/config.cson
-
-# Miniconda
-# title "Installing miniconda"
-# if [[ $(which conda) == "" ]]; then
-#  curl https://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -o ~/miniconda.sh
-#  bash ~/miniconda.sh -b -p $HOME/miniconda
-# fi

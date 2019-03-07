@@ -12,12 +12,6 @@ fi
 subtitle "Install required homebrew packages"
 brew bundle
 
-if [[ $(which conda) == "" ]]; then
-  subtitle "Install miniconda"
-  curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o ~/miniconda.sh
-  bash ~/miniconda.sh -b -p $HOME/miniconda
-fi
-
 ##############################################################################
 title "Security"
 ##############################################################################
@@ -181,7 +175,6 @@ defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -stri
 
 subtitle "Disable inline attachments (just show the icons)"
 defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
-
 
 ###############################################################################
 title "Misc"

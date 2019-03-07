@@ -3,6 +3,7 @@ brew "zsh"
 brew "getantibody/tap/antibody"
 brew "diff-so-fancy"
 brew "rbenv"
+cask "miniconda"
 
 # Install UI applications
 cask_args appdir: "/Applications"

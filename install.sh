@@ -15,7 +15,7 @@ link ~/.dotfiles/atom/config.cson ~/.atom/config.cson
 if [[ $(uname -s) == Darwin ]]
 then # macOS
   title "macOS specific install"
-  $(~/.dotfiles/macos_install.sh)
+  sh ~/.dotfiles/macos_install.sh
 elif [[ $(uname -s) == Linux ]]
 then
   title "Linux specific install"
@@ -29,10 +29,12 @@ then
 fi
 
 title "Install Antibody packages"
-$(./antibody/install.sh)
+sh ./antibody/install.sh
 
 title "Install atom packages"
 # apm install doesn't natively support skipping already installed packages
+# NOTE: Write apm packages to dotfile config
+# apm list --installed --bare > ~/.dotfiles/atom/package.list
 for package_and_version in `cat ~/.dotfiles/atom/package.list`;
 do
   # Strip the version number off the end of the package
@@ -44,7 +46,3 @@ do
 done
 
 title "Done :)"
-
-# ========== ATOM ==========
-# Write packages to dotfile config
-# apm list --installed --bare > ~/.dotfiles/atom/package.list

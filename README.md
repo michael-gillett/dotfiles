@@ -1,3 +1,5 @@
+# This repo must be located at ~/.dotfiles
+
 ### iterm2 (3.3+)
 - Minimal tabs and title bar
 - Material UI color scheme

@@ -47,9 +47,3 @@ fi
 #  curl https://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -o ~/miniconda.sh
 #  bash ~/miniconda.sh -b -p $HOME/miniconda
 # fi
-
-title "Installing miniconda"
-if [[ $(which conda) == "" ]]; then
-  curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o ~/miniconda.sh
-  bash ~/miniconda.sh -b -p $HOME/miniconda
-fi

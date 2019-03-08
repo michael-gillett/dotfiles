@@ -37,11 +37,11 @@ end)
 -- App Specific shortcuts
 
 local applicationHotkeys = {
-  t = 'iTerm',
-  c = 'Fantastical 2',
   a = 'Atom',
-  b = 'Bear',
-  g = 'Google Chrome'
+  s = 'Brave Browser',
+  d = 'iTerm',
+  c = 'Fantastical 2',
+  b = 'Bear'
 }
 
 for key, app in pairs(applicationHotkeys) do

@@ -15,6 +15,7 @@ cask "alfred"
 cask "dashlane"
 cask "brave-browser"
 cask "google-chrome"
+cask "spotify"
 
 # Install Fonts
 cask "homebrew/cask-fonts/font-source-code-pro"

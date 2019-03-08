@@ -14,6 +14,9 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # Init conda
-source ~/miniconda3/etc/profile.d/conda.sh
+source ~/miniconda/etc/profile.d/conda.sh
 
 source ~/.bashrc
+
+# Computer specific enviroment config
+source ~/.zshrc_extensions

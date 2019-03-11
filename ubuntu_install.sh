@@ -13,3 +13,10 @@ curl -sL git.io/antibody | sh -s
 # Download and place diff-so-fancy
 sudo curl -sL https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy \
           -o /bin/diff-so-fancy
+
+# Miniconda
+title "Installing miniconda"
+if [[ $(which conda) == "" ]]; then
+ curl https://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -o ~/miniconda.sh
+ bash ~/miniconda.sh -b -p $HOME/miniconda
+fi

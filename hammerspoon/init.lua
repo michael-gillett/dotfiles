@@ -35,17 +35,27 @@ win:moveToUnit(hs.layout.right50)
 end)
 
 -- App Specific shortcuts
-
 local applicationHotkeys = {
   t = 'iTerm',
   c = 'Fantastical 2',
   a = 'Atom',
   b = 'Bear',
-  g = 'Google Chrome'
+  g = 'Brave Browser'
 }
 
 for key, app in pairs(applicationHotkeys) do
   hs.hotkey.bind(hyper, key, function()
-    hs.application.launchOrFocus(app)
+    -- Launch or focus the application if its not focuses
+    if (hs.application.frontmostApplication():name() ~= app)
+    then
+      hs.application.launchOrFocus(app)
+    else
+      -- Switch through the open windows for the application
+      switcher = hs.window.switcher.new{app}
+      switcher.ui.showSelectedThumbnail = false
+      switcher.ui.showTitles = false
+      switcher.ui.showThumbnails = false
+      switcher:next()
+    end
   end)
 end

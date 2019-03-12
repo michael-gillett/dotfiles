@@ -17,9 +17,11 @@
     showIndentGuide: true
   "exception-reporting":
     userId: "d541b464-200f-43cf-8d80-6ee76dcb576e"
+  github: {}
   "linter-ui-default": {}
   "prettier-atom":
     formatOnSaveOptions:
+      enabled: true
       showInStatusBar: true
   welcome:
     showOnStartup: false

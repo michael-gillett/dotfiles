@@ -30,26 +30,16 @@ end)
 hs.hotkey.bind(hyper, "v", function()
   local win = hs.window.focusedWindow();
   if not win then return end
-<<<<<<< HEAD
   win:moveToUnit(hs.layout.right50)
 end)
 -- END Window movement controls
 
 -- START Spotfiy Controls
 hs.hotkey.bind(hyper, "left", function()
-=======
--- START Spotfiy Controls
-hs.hotkey.bind(hyper, "left", function()
-  print(hs.spotify.getPosition())
->>>>>>> 612cf2cc8ead739e009edea69c40ed99340d0389
   hs.spotify.setPosition(hs.spotify.getPosition() - 15)
 end)
 
 hs.hotkey.bind(hyper, "right", function()
-<<<<<<< HEAD
-=======
-  print(hs.spotify.getPosition())
->>>>>>> 612cf2cc8ead739e009edea69c40ed99340d0389
   hs.spotify.setPosition(hs.spotify.getPosition() + 15)
 end)
 -- END Spotify Controls

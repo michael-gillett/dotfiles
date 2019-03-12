@@ -37,30 +37,38 @@ end)
 -- App Specific shortcuts
 local applicationHotkeys = {
   a = 'Atom',
-<<<<<<< HEAD
   s = 'Brave Browser',
   d = 'iTerm',
-  c = 'Fantastical 2',
-  b = 'Bear'
-=======
-  b = 'Bear',
-  g = 'Brave Browser'
->>>>>>> 35497b0347c9705447dd08dd85b334f35819240a
+  f = 'Slack',
 }
 
 for key, app in pairs(applicationHotkeys) do
+  hs.tabs.enableForApp(app)
   hs.hotkey.bind(hyper, key, function()
     -- Launch or focus the application if its not focuses
     if (hs.application.frontmostApplication():name() ~= app)
     then
       hs.application.launchOrFocus(app)
     else
-      -- Switch through the open windows for the application
-      switcher = hs.window.switcher.new{app}
-      switcher.ui.showSelectedThumbnail = false
-      switcher.ui.showTitles = false
-      switcher.ui.showThumbnails = false
-      switcher:next()
+      a = hs.appfinder.appFromName(app)
+      ws = hs.tabs.tabWindows(a)
+
+      -- Find the current tab index
+      curr_tab_i = 1
+      for i, w in pairs(ws) do
+        if (w == a:focusedWindow()) then
+          curr_tab_i = i
+        end
+      end
+
+      -- Get the next tab index
+      next_tab_i = curr_tab_i + 1
+      if next_tab_i > #ws then
+        next_tab_i = 1
+      end
+
+      -- Focus the new tab
+      ws[next_tab_i]:focus()
     end
   end)
 end

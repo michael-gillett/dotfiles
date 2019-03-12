@@ -7,32 +7,41 @@ hs.hotkey.bind(hyper, "0", function()
 end)
 hs.notify.new({title="Hammerspoon", informativeText="Config loaded"}):send()
 
-
--- Window navigation controls
-hs.window.animationDuration = 0.1
-
-hs.hotkey.bind(hyper, "h", function()
+hs.window.animationDuration = 0
+-- START Window movement controls
+hs.hotkey.bind(hyper, "z", function()
   local win = hs.window.focusedWindow();
   if not win then return end
-win:moveToUnit(hs.layout.left50)
+  win:moveToUnit(hs.layout.left50)
 end)
 
-hs.hotkey.bind(hyper, "j", function()
+hs.hotkey.bind(hyper, "x", function()
   local win = hs.window.focusedWindow();
   if not win then return end
-win:moveToUnit(hs.layout.maximized)
+  win:moveToScreen(win:screen():next())
 end)
 
-hs.hotkey.bind(hyper, "k", function()
+hs.hotkey.bind(hyper, "c", function()
   local win = hs.window.focusedWindow();
   if not win then return end
-win:moveToScreen(win:screen():next())
+  win:moveToUnit(hs.layout.maximized)
 end)
 
-hs.hotkey.bind(hyper, "l", function()
+hs.hotkey.bind(hyper, "v", function()
   local win = hs.window.focusedWindow();
   if not win then return end
-win:moveToUnit(hs.layout.right50)
+-- START Spotfiy Controls
+hs.hotkey.bind(hyper, "left", function()
+  print(hs.spotify.getPosition())
+  hs.spotify.setPosition(hs.spotify.getPosition() - 15)
+end)
+
+hs.hotkey.bind(hyper, "right", function()
+  print(hs.spotify.getPosition())
+  hs.spotify.setPosition(hs.spotify.getPosition() + 15)
+end)
+-- END Spotify Controls
+
 -- Alert with the J muni predicition times
 hs.hotkey.bind(hyper, "9", function()
   hs.http.asyncGet('http://webservices.nextbus.com/service/publicJSONFeed?command=predictions&a=sf-muni&r=J&s=6994', nil, function(status, body, headers)

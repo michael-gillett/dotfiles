@@ -1,4 +1,5 @@
 local hyper = { "cmd", "alt", "ctrl", "shift" }
+hs.alert.defaultStyle.atScreenEdge = 2
 
 -- Reload hammerspoon config
 hs.hotkey.bind(hyper, "0", function()
@@ -32,6 +33,21 @@ hs.hotkey.bind(hyper, "l", function()
   local win = hs.window.focusedWindow();
   if not win then return end
 win:moveToUnit(hs.layout.right50)
+-- Alert with the J muni predicition times
+hs.hotkey.bind(hyper, "9", function()
+  hs.http.asyncGet('http://webservices.nextbus.com/service/publicJSONFeed?command=predictions&a=sf-muni&r=J&s=6994', nil, function(status, body, headers)
+    local json = require "json"
+    res = json:decode(body)
+    preds = res.predictions.direction.prediction
+    res = "J Out: "
+    for i, p in pairs(preds) do
+      res = res .. p.minutes
+      if i ~= 5 then
+        res = res .. ", "
+      end
+    end
+    hs.alert.show(res, 3)
+  end)
 end)
 
 -- App Specific shortcuts

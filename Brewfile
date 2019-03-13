@@ -4,6 +4,7 @@ brew "getantibody/tap/antibody"
 brew "diff-so-fancy"
 brew "rbenv"
 cask "miniconda"
+brew "autojump"
 
 # Install UI applications
 cask_args appdir: "/Applications"

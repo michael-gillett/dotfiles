@@ -1,5 +1,4 @@
 local hyper = { "cmd", "alt", "ctrl", "shift" }
-hs.alert.defaultStyle.atScreenEdge = 2
 
 -- Reload hammerspoon config
 hs.hotkey.bind(hyper, "0", function()
@@ -52,12 +51,14 @@ hs.hotkey.bind(hyper, "9", function()
     preds = res.predictions.direction.prediction
     res = "J Out: "
     for i, p in pairs(preds) do
-      res = res .. p.minutes
-      if i ~= 5 then
+      res = res .. os.date("%I:%M", os.time() + p.seconds):gsub(" 0"," ")
+      if i == 3 then
+        break
+      else
         res = res .. ", "
       end
     end
-    hs.alert.show(res, 3)
+    hs.alert.show(res, 5)
   end)
 end)
 

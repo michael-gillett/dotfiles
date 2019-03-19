@@ -18,5 +18,8 @@ source ~/miniconda/etc/profile.d/conda.sh
 
 source ~/.bashrc
 
+# Aliases
+alias k="kubectl"
+
 # Computer specific enviroment config
 source ~/.zshrc_extensions

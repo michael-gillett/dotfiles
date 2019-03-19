@@ -2,15 +2,15 @@
 source ~/.dotfiles/helpers.sh
 
 title "Link config files"
-link ~/.dotfiles/bash_profile ~/.bash_profile
-link ~/.dotfiles/bashrc ~/.bashrc
-link ~/.dotfiles/vimrc ~/.vimrc
-link ~/.dotfiles/zshrc ~/.zshrc
-link ~/.dotfiles/gitconfig ~/.gitconfig
-mkdir ~/.hammerspoon
-link ~/.dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
-mkdir ~/.atom
-link ~/.dotfiles/atom/config.cson ~/.atom/config.cson
+ln -sf ~/.dotfiles/bash_profile ~/.bash_profile
+ln -sf ~/.dotfiles/bashrc ~/.bashrc
+ln -sf ~/.dotfiles/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/zshrc ~/.zshrc
+ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
+mkdir -p ~/.hammerspoon
+ln -sf ~/.dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
+mkdir -p ~/.atom
+ln -sf ~/.dotfiles/atom/config.cson ~/.atom/config.cson
 
 if [[ $(uname -s) == Darwin ]]
 then # macOS

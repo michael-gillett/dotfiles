@@ -3,6 +3,9 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 # Auto load suggestions when correcting case
 setopt MENU_COMPLETE
 
+# Set a cache dir
+export ZSH_CACHE_DIR=$HOME/.zsh/cache
+
 # Reload completions
 autoload -Uz compinit && compinit
 

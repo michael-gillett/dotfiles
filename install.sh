@@ -11,6 +11,7 @@ mkdir -p ~/.hammerspoon
 ln -sf ~/.dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
 mkdir -p ~/.atom
 ln -sf ~/.dotfiles/atom/config.cson ~/.atom/config.cson
+mkdir -p ~/.zsh/cache
 
 if [[ $(uname -s) == Darwin ]]
 then # macOS

@@ -1,5 +1,6 @@
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [user]
-	name = Mike Gillett
-	email = mgillett@gmail.com
+	# Values set in ~/.gitconfig_local
+[include]
+	path=~/.gitconfig_local

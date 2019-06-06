@@ -3,5 +3,4 @@ zsh-users/zsh-completions
 robbyrussell/oh-my-zsh path:lib/git.zsh
 robbyrussell/oh-my-zsh path:plugins/git
 robbyrussell/oh-my-zsh path:plugins/kubectl
-denysdovhan/spaceship-prompt
 wting/autojump path:bin/autojump.zsh

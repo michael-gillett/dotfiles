@@ -21,11 +21,11 @@ compinit -C
 source ~/.zsh_plugins.sh
 
 # Init rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
 
 # Init conda
-source ~/miniconda/etc/profile.d/conda.sh
+# source ~/miniconda/etc/profile.d/conda.sh
 
 source ~/.bashrc
 
@@ -34,5 +34,13 @@ deti() {
   docker run --rm -it --entrypoint "/bin/sh" "$1"
 }
 
+########## GPG setup for SSH ##########
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# Start gpg-agent, if it isn't started already
+gpgconf --launch gpg-agent
+gpg-connect-agent updatestartuptty /bye
+# Set an environment variable to tell GPG the current terminal.
+export GPG_TTY=$(tty)
+
 # Computer specific enviroment config
-source ~/.zshrc_extensions
+# source ~/.zshrc_extensions

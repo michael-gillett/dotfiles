@@ -64,11 +64,12 @@ end)
 
 -- App Specific shortcuts
 local applicationHotkeys = {
-  a = 'Atom',
-  s = 'Brave Browser',
-  d = 'iTerm',
-  f = 'Slack',
-  g = 'Spotify'
+  w = 'net.shinyfrog.bear',
+  a = 'com.microsoft.VSCode',
+  s = hs.urlevent.getDefaultHandler('http'),
+  d = 'com.googlecode.iterm2',
+  f = 'com.tinyspeck.slackmacgap',
+  g = 'com.spotify.client'
 }
 
 for key, app in pairs(applicationHotkeys) do
@@ -77,9 +78,9 @@ for key, app in pairs(applicationHotkeys) do
     -- Launch or focus the application if its not focuses
     if (hs.application.frontmostApplication():name() ~= app)
     then
-      hs.application.launchOrFocus(app)
+      hs.application.launchOrFocusByBundleID(app)
     else
-      a = hs.appfinder.appFromName(app)
+      a = hs.application.applicationsForBundleID(app)
       ws = hs.tabs.tabWindows(a)
 
       -- Find the current tab index

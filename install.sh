@@ -6,6 +6,7 @@ title "Link config files"
 ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
+ln -sf ~/.dotfiles/com.local.KeyRemapping.plist ~/Library/LaunchAgents/com.local.KeyRemapping.plist
 mkdir -p ~/.hammerspoon
 ln -sf ~/.dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
 mkdir -p ~/.zsh/cache

@@ -1,3 +1,6 @@
+########## Homebrew ##########
+export PATH=/opt/homebrew/bin:$PATH
+
 # Case insensitive tab completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 # Auto load suggestions when correcting case
@@ -33,15 +36,13 @@ deti() {
 }
 
 ########## GPG setup for SSH ##########
+# https://developer.okta.com/blog/2021/07/07/developers-guide-to-gpg#enable-your-gpg-key-for-ssh
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 # Start gpg-agent, if it isn't started already
 gpgconf --launch gpg-agent
-gpg-connect-agent updatestartuptty /bye
+gpg-connect-agent updatestartuptty /bye > /dev/null
 # Set an environment variable to tell GPG the current terminal.
 export GPG_TTY=$(tty)
-
-########## Homebrew ##########
-export PATH=/opt/homebrew/bin:$PATH
 
 # Computer specific enviroment config
 # source ~/.zshrc_extensions

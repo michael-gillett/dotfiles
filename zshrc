@@ -27,8 +27,6 @@ source ~/.zsh_plugins.sh
 # Init conda
 # source ~/miniconda/etc/profile.d/conda.sh
 
-source ~/.bashrc
-
 # Aliases
 deti() {
   docker run --rm -it --entrypoint "/bin/sh" "$1"
@@ -41,6 +39,9 @@ gpgconf --launch gpg-agent
 gpg-connect-agent updatestartuptty /bye
 # Set an environment variable to tell GPG the current terminal.
 export GPG_TTY=$(tty)
+
+########## Homebrew ##########
+export PATH=/opt/homebrew/bin:$PATH
 
 # Computer specific enviroment config
 # source ~/.zshrc_extensions

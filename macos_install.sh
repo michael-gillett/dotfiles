@@ -1,5 +1,5 @@
 # Include printing helper functions
-source ~/.dotfiles/helpers.sh
+source ./helpers.sh
 
 ##############################################################################
 title "CLI Tools"

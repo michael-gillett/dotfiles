@@ -3,18 +3,18 @@
 . "./helpers.sh"
 
 title "Link config files"
-ln -sf ~/.dotfiles/vimrc ~/.vimrc
-ln -sf ~/.dotfiles/zshrc ~/.zshrc
-ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
-ln -sf ~/.dotfiles/com.local.KeyRemapping.plist ~/Library/LaunchAgents/com.local.KeyRemapping.plist
+ln -sf $(pwd)/vimrc ~/.vimrc
+ln -sf $(pwd)/zshrc ~/.zshrc
+ln -sf $(pwd)/gitconfig ~/.gitconfig
+ln -sf $(pwd)/com.local.KeyRemapping.plist ~/Library/LaunchAgents/com.local.KeyRemapping.plist
 mkdir -p ~/.hammerspoon
-ln -sf ~/.dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
+ln -sf $(pwd)/hammerspoon/init.lua ~/.hammerspoon/init.lua
 mkdir -p ~/.zsh/cache
 
 if [ "$(uname -s)" = Darwin ]
 then # macOS
   title "macOS specific install"
-  sh ~/.dotfiles/macos_install.sh
+  sh ./macos_install.sh
 elif [ "$(uname -s)" = Linux ]
 then
   title "Linux specific install"

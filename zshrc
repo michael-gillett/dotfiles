@@ -35,6 +35,9 @@ deti() {
   docker run --rm -it --entrypoint "/bin/sh" "$1"
 }
 
+# fnm node version manager setup
+eval "$(fnm env --use-on-cd)"
+
 ########## GPG setup for SSH ##########
 # https://developer.okta.com/blog/2021/07/07/developers-guide-to-gpg#enable-your-gpg-key-for-ssh
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)

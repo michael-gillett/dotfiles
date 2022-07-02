@@ -3,10 +3,10 @@ local hyper = { "cmd", "alt", "ctrl", "shift" }
 
 HyperMode = hs.hotkey.modal.new({})
 
--- Enter Hyper Mode when F18 (right option key) is pressed
+-- Enter Hyper Mode when F18 is pressed
 local pressedF18 = function() HyperMode:enter() end
 
--- Leave Hyper Mode when F18 (right option key) is released.
+-- Leave Hyper Mode when F18 is released.
 local releasedF18 = function() HyperMode:exit() end
 
 hs.hotkey.bind({}, 'F18', pressedF18, releasedF18)
@@ -48,33 +48,14 @@ HyperMode:bind({}, "v", function()
 end)
 -- END Window movement controls
 
--- Alert with the J muni predicition times
-HyperMode:bind({}, "9", function()
-  hs.http.asyncGet('http://webservices.nextbus.com/service/publicJSONFeed?command=predictions&a=sf-muni&r=J&s=6994', nil, function(status, body, headers)
-    local json = require "json"
-    res = json:decode(body)
-    preds = res.predictions.direction.prediction
-    res = "J Out: "
-    for i, p in pairs(preds) do
-      res = res .. os.date("%I:%M", os.time() + p.seconds):gsub(" 0"," ")
-      if i == 3 then
-        break
-      else
-        res = res .. ", "
-      end
-    end
-    hs.alert.show(res, 5)
-  end)
-end)
-
 -- App Specific shortcuts
 local applicationHotkeys = {
   w = 'net.shinyfrog.bear',
   a = 'com.microsoft.VSCode',
   s = hs.urlevent.getDefaultHandler('http'),
-  d = 'com.googlecode.iterm2',
+  d = 'com.apple.Terminal',
   f = 'com.tinyspeck.slackmacgap',
-  g = 'com.spotify.client'
+  g = 'com.DanPristupov.Fork'
 }
 
 for key, app in pairs(applicationHotkeys) do

@@ -5,6 +5,7 @@
 title "Link config files"
 ln -sf $(pwd)/vimrc ~/.vimrc
 ln -sf $(pwd)/zshrc ~/.zshrc
+ln -sf $(pwd)/plugins ~/.zsh/plugins
 ln -sf $(pwd)/gitconfig ~/.gitconfig
 ln -sf $(pwd)/com.local.KeyRemapping.plist ~/Library/LaunchAgents/com.local.KeyRemapping.plist
 mkdir -p ~/.hammerspoon
@@ -27,7 +28,5 @@ then
   chsh -s "$(which zsh)"
 fi
 
-title "Install Antibody packages"
-sh ./antibody/install.sh
 
 title "Done :)"

@@ -4,8 +4,15 @@ brew "rbenv"
 brew "autojump"
 brew "yarn"
 brew "fnm" # Node package manager
-brew "docker"
+
+brew "shellcheck"
+
+# LiveRamp Specific
 brew "kubectl"
+brew "tfenv"
+brew "vault"
+brew "mysql@5.7"
+brew "openssl@1.1"
 
 # Install UI applications
 cask_args appdir: "/Applications"
@@ -14,6 +21,8 @@ cask "1password"
 cask "insomnia"
 cask "fork"
 cask "visual-studio-code"
+cask "docker"
+cask "google-cloud-sdk"
 
 # Install Fonts
 cask "homebrew/cask-fonts/font-source-code-pro"

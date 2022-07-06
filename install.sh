@@ -3,15 +3,15 @@
 . "./helpers.sh"
 
 title "Link config files"
-ln -sf $(pwd)/vimrc ~/.vimrc
-ln -sf $(pwd)/zshrc ~/.zshrc
-ln -sf $(pwd)/zshenv ~/.zshenv
-ln -sf $(pwd)/zsh/*.zsh ~/.zsh/
-ln -sf $(pwd)/plugins ~/.zsh/plugins
-ln -sf $(pwd)/gitconfig ~/.gitconfig
-ln -sf $(pwd)/com.local.KeyRemapping.plist ~/Library/LaunchAgents/com.local.KeyRemapping.plist
+ln -sf "$(pwd)"/vimrc ~/.vimrc
+ln -sf "$(pwd)"/zshrc ~/.zshrc
+ln -sf "$(pwd)"/zshenv ~/.zshenv
+ln -sf "$(pwd)"/zsh/*.zsh ~/.zsh/
+ln -sf "$(pwd)"/plugins ~/.zsh/plugins
+ln -sf "$(pwd)"/gitconfig ~/.gitconfig
+ln -sf "$(pwd)"/com.local.KeyRemapping.plist ~/Library/LaunchAgents/com.local.KeyRemapping.plist
 mkdir -p ~/.hammerspoon
-ln -sf $(pwd)/hammerspoon/init.lua ~/.hammerspoon/init.lua
+ln -sf "$(pwd)"/hammerspoon/init.lua ~/.hammerspoon/init.lua
 mkdir -p ~/.zsh/cache
 
 if [ "$(uname -s)" = Darwin ]

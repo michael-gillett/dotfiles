@@ -1,5 +1,3 @@
-# This repo must be located at ~/.dotfiles
-
 ## Create ~/.gitconfig_local with relevant username and email
 
 ## Create ~/.zshrc_extensions with computer specific config

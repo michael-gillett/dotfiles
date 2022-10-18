@@ -1,19 +1,28 @@
 # Install CLI commands
 brew "zsh"
-brew "getantibody/tap/antibody"
-brew "diff-so-fancy"
 brew "rbenv"
-cask "miniconda"
 brew "autojump"
+brew "yarn"
+brew "fnm" # Node package manager
+
+brew "shellcheck"
+
+# LiveRamp Specific
+brew "kubectl"
+brew "tfenv"
+brew "vault"
+brew "mysql@5.7"
+brew "openssl@1.1"
 
 # Install UI applications
 cask_args appdir: "/Applications"
 cask "hammerspoon"
-cask "karabiner-elements"
-cask "iterm2"
 cask "1password"
-cask "firefox"
-cask "spotify"
+cask "insomnia"
+cask "fork"
+cask "visual-studio-code"
+cask "docker"
+cask "google-cloud-sdk"
 
 # Install Fonts
 cask "homebrew/cask-fonts/font-source-code-pro"

@@ -5,6 +5,7 @@ export PATH=/opt/homebrew/bin:$PATH
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 # Auto load suggestions when correcting case
 setopt MENU_COMPLETE
+setopt share_history
 
 # Set custom prompt
 PROMPT='%F{green}%2d > '
@@ -32,17 +33,26 @@ source ~/.zsh_plugins.sh
 
 # Aliases
 deti() {
-  docker run --rm -it --entrypoint "/bin/sh" "$1"
+  docker run --rm -it --entrypoint "/bin/bash" "$1"
 }
 
 ########## GPG setup for SSH ##########
-# https://developer.okta.com/blog/2021/07/07/developers-guide-to-gpg#enable-your-gpg-key-for-ssh
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-# Start gpg-agent, if it isn't started already
-gpgconf --launch gpg-agent
-gpg-connect-agent updatestartuptty /bye > /dev/null
+
 # Set an environment variable to tell GPG the current terminal.
+# NOTE: This is needed to ensure the pin entry prompt goes to the correct TTY
 export GPG_TTY=$(tty)
 
+# Start gpg-agent, if it isn't started already
+gpgconf --launch gpg-agent
+SERIAL=$(gpg-connect-agent 'scd serialno' /bye | head -n 1 | cut -f3 -d' ')
+gpg-connect-agent "scd checkpin $SERIAL" /bye > /dev/null
+# gpg-connect-agent updatestartuptty /bye > /dev/null
+
+# https://developer.okta.com/blog/2021/07/07/developers-guide-to-gpg#enable-your-gpg-key-for-ssh
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
+########## End GPG setup for SSH ##########
+
+eval "$(fnm env --use-on-cd)"
 # Computer specific enviroment config
 # source ~/.zshrc_extensions

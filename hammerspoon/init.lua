@@ -72,13 +72,13 @@ local applicationHotkeys = {
   w = 'net.shinyfrog.bear',
   a = 'com.microsoft.VSCode',
   s = hs.urlevent.getDefaultHandler('http'),
-  d = 'com.googlecode.iterm2',
+  d = 'com.apple.Terminal', --'com.googlecode.iterm2',
   f = 'com.tinyspeck.slackmacgap',
   g = 'com.spotify.client'
 }
 
 for key, app in pairs(applicationHotkeys) do
-  hs.tabs.enableForApp(app)
+--  hs.tabs.enableForApp(app)
   HyperMode:bind({}, key, function()
     -- Launch or focus the application if its not focuses
     if (hs.application.frontmostApplication():name() ~= app)

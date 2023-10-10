@@ -26,14 +26,21 @@ for conf in "$HOME/.zsh/"*.zsh; do
 done
 unset conf
 
+
+# Share history between tabs
+setopt share_history
+
 ########## GPG setup for SSH ##########
 # https://developer.okta.com/blog/2021/07/07/developers-guide-to-gpg#enable-your-gpg-key-for-ssh
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 # Start gpg-agent, if it isn't started already
-gpgconf --launch gpg-agent
-gpg-connect-agent updatestartuptty /bye > /dev/null
+# gpgconf --launch gpg-agent
+# gpg-connect-agent updatestartuptty /bye > /dev/null
 # Set an environment variable to tell GPG the current terminal.
-export GPG_TTY=$(tty)
+# export GPG_TTY=$(tty)
 
 # Computer specific enviroment config
 # source ~/.zshrc_extensions
+source /Users/mgille/.liveramp_profile
+
+source /Users/mgille/.docker/init-zsh.sh || true # Added by Docker Desktop

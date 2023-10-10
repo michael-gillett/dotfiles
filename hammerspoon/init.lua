@@ -59,32 +59,32 @@ local applicationHotkeys = {
 }
 
 for key, app in pairs(applicationHotkeys) do
-  hs.tabs.enableForApp(app)
+  -- hs.tabs.enableForApp(app)
   HyperMode:bind({}, key, function()
     -- Launch or focus the application if its not focuses
     if (hs.application.frontmostApplication():name() ~= app)
     then
       hs.application.launchOrFocusByBundleID(app)
-    else
-      a = hs.application.applicationsForBundleID(app)
-      ws = hs.tabs.tabWindows(a)
+    -- else
+    --   a = hs.application.applicationsForBundleID(app)
+    --   ws = hs.tabs.tabWindows(a)
 
-      -- Find the current tab index
-      curr_tab_i = 1
-      for i, w in pairs(ws) do
-        if (w == a:focusedWindow()) then
-          curr_tab_i = i
-        end
-      end
+    --   -- Find the current tab index
+    --   curr_tab_i = 1
+    --   for i, w in pairs(ws) do
+    --     if (w == a:focusedWindow()) then
+    --       curr_tab_i = i
+    --     end
+    --   end
 
-      -- Get the next tab index
-      next_tab_i = curr_tab_i + 1
-      if next_tab_i > #ws then
-        next_tab_i = 1
-      end
+    --   -- Get the next tab index
+    --   next_tab_i = curr_tab_i + 1
+    --   if next_tab_i > #ws then
+    --     next_tab_i = 1
+    --   end
 
-      -- Focus the new tab
-      ws[next_tab_i]:focus()
+    --   -- Focus the new tab
+    --   ws[next_tab_i]:focus()
     end
   end)
 end

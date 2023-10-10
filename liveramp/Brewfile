@@ -1,0 +1,11 @@
+brew "kubectl"
+brew "tfenv"
+brew "vault"
+brew "mysql@5.7"
+brew "openssl@1.1"
+brew "yarn"
+brew "fnm"
+brew "rbenv"
+
+cask "docker"
+cask "google-cloud-sdk"

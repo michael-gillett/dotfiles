@@ -1,8 +1,16 @@
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	editor = /usr/bin/vim
 [user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAEI0uhxcvXz06mc4C1yznBNknIMWmFLJbf2B8Hcqsel
   # Values set in ~/.gitconfig_local
 [include]
   path=~/.gitconfig_local
 [pull]
   rebase=false
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true

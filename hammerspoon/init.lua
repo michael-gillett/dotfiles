@@ -26,7 +26,12 @@ hs.window.animationDuration = 0.05
 HyperMode:bind({}, "z", function()
   local win = hs.window.focusedWindow();
   if not win then return end
+
+  if win:screen():rotate() == 0 then
   win:moveToUnit(hs.layout.left50)
+  else
+    win:moveToUnit(hs.geometry.rect(0, 0, 1, 0.5))
+  end
 end)
 
 HyperMode:bind({}, "x", function()
@@ -44,7 +49,12 @@ end)
 HyperMode:bind({}, "v", function()
   local win = hs.window.focusedWindow();
   if not win then return end
+
+  if win:screen():rotate() == 0 then
   win:moveToUnit(hs.layout.right50)
+  else
+    win:moveToUnit(hs.geometry.rect(0, 0.5, 1, 0.5))
+  end
 end)
 -- END Window movement controls
 
@@ -70,7 +80,7 @@ end)
 -- App Specific shortcuts
 local applicationHotkeys = {
   w = 'net.shinyfrog.bear',
-  a = 'com.microsoft.VSCode',
+  a = 'com.todesktop.230313mzl4w4u92', --'com.microsoft.VSCode',
   s = hs.urlevent.getDefaultHandler('http'),
   d = 'com.apple.Terminal', --'com.googlecode.iterm2',
   f = 'com.tinyspeck.slackmacgap',

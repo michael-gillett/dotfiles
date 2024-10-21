@@ -49,7 +49,6 @@ gpg-connect-agent "scd checkpin $SERIAL" /bye > /dev/null
 # gpg-connect-agent updatestartuptty /bye > /dev/null
 
 # https://developer.okta.com/blog/2021/07/07/developers-guide-to-gpg#enable-your-gpg-key-for-ssh
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 ########## End GPG setup for SSH ##########
 

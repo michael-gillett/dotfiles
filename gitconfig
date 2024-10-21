@@ -1,7 +1,10 @@
 [core]
-  # pager = diff-so-fancy | less --tabs=4 -RFX
+	editor = /usr/bin/vim
 [user]
-  # Values set in ~/.gitconfig_local
+	name = Mike Gillett
+	email = mgillett54@gmail.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAEI0uhxcvXz06mc4C1yznBNknIMWmFLJbf2B8Hcqsel
+	# Values set in ~/.gitconfig_local
 [include]
   path=~/.gitconfig_local
 [pull]
@@ -12,7 +15,7 @@
 	helper = osxkeychain
 [gpg]
 	format = ssh
-[commit]
-	gpgSign = true
 [gpg "ssh"]
-	allowedSignersFile = /Users/gillett/.ssh/allowed_signers
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
